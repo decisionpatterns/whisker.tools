@@ -14,15 +14,15 @@
 #'  @seealso 
 #'    \code{\link[whisker]{whisker.render}}
 #'    \code{\link[stringr]{str_extract_all}} on which this function relies  
+#'    
 #'  @examples
 #'    template <- "Dear {{name}}, I have not loved you since {{date}}"
 #'    whisker_extract_all(template)
 #'  str_extract_all( template, pattern=perl("\\{\\{(.*)\\}\\}") )
 #'   
+#' @export   
 
 whisker_extract_all <- function(template) {
-  
-  require(stringr)
   
   message( class(template) )
   variables <- 

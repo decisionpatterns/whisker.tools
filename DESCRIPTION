@@ -1,12 +1,11 @@
 Package: whisker.tools
 Title: Extensions to the whisker library
-Version: 0.1
+Version: 0.1.1
 Authors@R: "Christopher Brown <Christopher.Brown@decisionpatterns.com> [aut,
     cre]"
 Description: Functions and methods that enhance the whisker library
 Depends:
-    R (>= 3.0.2)
-License: GPL2
+    whisker,
+    stringr
+License: GPL-2
 LazyData: true
-Imports:
-    whisker
