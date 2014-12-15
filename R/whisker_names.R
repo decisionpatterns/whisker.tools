@@ -1,6 +1,6 @@
-#' whisker_extract_all 
+#' whisker_names 
 #' 
-#'  Extract varaibles from a whisker template
+#'  Extract varaibles names from a whisker template
 #'  
 #'  @param template character of template text
 #'  
@@ -18,13 +18,13 @@
 #'  @examples
 #'    template <- "Dear {{name}}, I have not loved you since {{date}}"
 #'    
-#'    whisker_extract_all(template)
+#'    whisker_names(template)
 #'    
 #'   
 #' @export   
 #' @import stringr
 
-whisker_extract_all <- function(template) {
+whisker_names <- function(template) {
   
   variables <- 
     stringr::str_extract_all( template, pattern=perl( '{{(.+?)}}' ) )

@@ -1,7 +1,7 @@
 Package: whisker.tools
 Title: Extensions to the whisker library
-Version: 0.3
-Date: 2014-12-14
+Version: 0.4
+Date: 2014-12-15
 Authors@R: "Christopher Brown <Christopher.Brown@decisionpatterns.com> [aut,
     cre]"
 Description: Functions and methods that enhance the whisker library
