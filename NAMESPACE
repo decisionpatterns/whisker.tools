@@ -2,4 +2,7 @@
 
 export(whisker.path)
 export(whisker_extract_all)
+export(whisker_find_all)
 export(whisker_mapply)
+import(stringr)
+import(whisker)

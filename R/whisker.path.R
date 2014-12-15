@@ -18,6 +18,7 @@
 #'   whisker.path( "{{dir}}", "{{file_name}}.txt" )
 #'   
 #' @export
+#' @import whisker
 
 whisker.path <- function( ..., data=parent.frame(), fsep=.Platform$file.sep ) { 
 
@@ -26,7 +27,7 @@ whisker.path <- function( ..., data=parent.frame(), fsep=.Platform$file.sep ) {
   )
   
   return( 
-    whisker.render( template, data=data )
+    whisker::whisker.render( template, data=data )
   )
   
 }

@@ -20,8 +20,8 @@ Extract varaibles from a whisker template
 }
 \examples{
 template <- "Dear {{name}}, I have not loved you since {{date}}"
+
    whisker_extract_all(template)
- str_extract_all( template, pattern=perl("\\\\{\\\\{(.*)\\\\}\\\\}") )
 }
 \seealso{
 \code{\link[whisker]{whisker.render}}

@@ -1,4 +1,4 @@
-#' whisker_mapply - repeatedly ender a template over multiple arguments 
+#' whisker_mapply - repeatedly render a template over multiple arguments 
 #' 
 #' Have a mixture of changing and unchanging template elements.
 #' 
@@ -25,8 +25,8 @@
 #'   \code{\link{whisker.render}}
 #'      
 #' @examples   
-#'   # template <- 'type {{type}}: {{uppercase}},{{lowercase}}'
-#'   # whisker_mapply( template, list(type="alphabet"), lowercase=letters[1:3], uppercase=LETTERS[1:3] )
+#'   template <- 'type {{type}}: {{uppercase}},{{lowercase}}'
+#'   whisker_mapply( template, list(type="alphabet"), lowercase=letters[1:3], uppercase=LETTERS[1:3] )
 #'   
 #'   # USED IN LOOP ... 
 #'   #  template is pre-defined at top of code (above) and is not changes, 

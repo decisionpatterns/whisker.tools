@@ -17,18 +17,19 @@
 #'    
 #'  @examples
 #'    template <- "Dear {{name}}, I have not loved you since {{date}}"
+#'    
 #'    whisker_extract_all(template)
-#'  str_extract_all( template, pattern=perl("\\{\\{(.*)\\}\\}") )
+#'    
 #'   
 #' @export   
+#' @import stringr
 
 whisker_extract_all <- function(template) {
   
-  message( class(template) )
   variables <- 
-    str_extract_all( template, pattern=perl( '{{(.+?)}}' ) )
+    stringr::str_extract_all( template, pattern=perl( '{{(.+?)}}' ) )
+  
   variables <- lapply( variables, str_replace_all, pattern=perl( '[{}]'), replacement='')
-  # variables <- str_replace( variables, pattern=perl( '[{}]'), replacement='')
   
   unlist(variables)
 }
