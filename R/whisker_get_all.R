@@ -31,39 +31,23 @@
 
 
 whisker_get_all <- function(template, ...) { 
-
+# browser()
   nms <- whisker_names(template)
 
   li <- list() 
   
   for( nm in nms ) {
-    value = try( get( nm ) )
- 
-    if( ! class(value) == 'try-error' ) 
-      li[[nm]] <- get(nm, ... ) else 
-      warning( nm, " not found" )
+    li[[nm]] <-
+      
+      tryCatch( get(nm)
+        , error = function() 
+            tryCatch( 
+                get(nm, ...)
+              , error = function() warning( "whisker_get_all: ", nm, " not found", immediate. = TRUE, call. = FALSE ) 
+            )
+      )
   } 
   
   return(li)
   
 }
-
-# whisker_get_all <- function( template ) { 
-# 
-#   nms <- whisker_names( template )
-#   
-#   li <- list() 
-#   
-#   for( nm in nms ) {
-#     envs <- find( nm )
-# 
-#     if( ! is.na(envs) )
-#       value = try( get( nm, envir = as.environment( envs[1] ) ) )
-#     
-#     if( ! class(value) == 'try-error' ) li[[nm]] <- get( nm ) else 
-#     warning( nm, "not found.")
-#   }
-#   
-#   return(li)
-#   
-# }

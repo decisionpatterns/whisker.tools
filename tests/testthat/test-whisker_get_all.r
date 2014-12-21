@@ -4,11 +4,10 @@ context( "whisker_get_all" )
 
 tmpl <- "A is {{a}}; z is {{z}}"
 
-NEWENV <- new.env() 
-NEWENV$a <- 1
-NEWENV$z <- 26
-attach( NEWENV )
-
+  NEWENV <- new.env() 
+  NEWENV$a <- 1
+  NEWENV$z <- 26
+  attach( NEWENV )
 
 # BASIC TEST
   if( exists('x') ) rm(x)
@@ -16,9 +15,10 @@ attach( NEWENV )
   expect_equivalent( list2env(x), NEWENV )
 
 
-NEWERENV <- new.env() 
-NEWERENV$a <- "passed"
-attach( NEWERENV, warn.conflicts = FALSE  )
+# CLOBBER
+  NEWERENV <- new.env() 
+  NEWERENV$a <- "passed"
+  attach( NEWERENV, warn.conflicts = FALSE  )
 
 # BASIC TESTS
   if( exists('x') ) rm(x)
@@ -34,7 +34,6 @@ attach( NEWERENV, warn.conflicts = FALSE  )
 
 
 # ... IN .parent.frame ?
-
   f <- function() get("a", parent.frame() )
   expect_equivalent( f(), "passed" )
 
@@ -51,6 +50,7 @@ attach( NEWERENV, warn.conflicts = FALSE  )
   
 
 # Clean-up 
-  detach( NEWENV ); detach( NEWERENV )
+  detach( NEWENV )
+  detach( NEWERENV )
   if( exists('x') ) rm(x)
   if( exists('f2') ) rm(f2)
