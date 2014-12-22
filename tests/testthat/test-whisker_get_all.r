@@ -55,6 +55,7 @@ tmpl <- "A is {{a}}; z is {{z}}"
   expect_equal( x$z, 26 )
   
 
+
 # Clean-up 
   detach( NEWENV )
   detach( NEWERENV )
