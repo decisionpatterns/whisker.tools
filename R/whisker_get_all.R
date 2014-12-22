@@ -36,14 +36,14 @@ whisker_get_all <- function(template, ...) {
   nms <- whisker_names(template)
 
   li <- list()
-
   for( nm in nms ) {
     li[[nm]] <- tryCatch( 
-      get(nm, ..., inherits = TRUE )
-      , error = function() warning( "whisker_get_all: ", nm, " not found", immediate. = TRUE, call. = FALSE )
+        get(nm, ..., inherits = TRUE )
+      , error = function(...) warning( "whisker_get_all: ", nm, " not found", immediate. = TRUE, call. = FALSE )
     )
   }
 
   return(li)
 
+  tryCatch
 }
