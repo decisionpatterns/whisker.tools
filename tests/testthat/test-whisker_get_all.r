@@ -28,6 +28,11 @@ tmpl <- "A is {{a}}; z is {{z}}"
   rm( NEWENV, NEWERENV )  # Still on search path
 
 
+# IN FUNCTION
+  f <- function( template ) whisker_get_all( template ) 
+  f( tmpl )
+  expect_equivalent( f(tmpl), list( a = "passed", z = 26) )
+
 # DOES `get` WORK IN .GlobalEnv ?
   f <- function() get("a", .GlobalEnv )
   expect_equivalent( f(), "passed" )
@@ -42,6 +47,7 @@ tmpl <- "A is {{a}}; z is {{z}}"
   f <- function() get( "a" )
   expect_equivalent( f(), "passed" )
   
+
 # DOES whisker_get_all WHEN USING sourced?
   if( exists('x') ) rm(x)
   source( "source-me.r", local = TRUE  )
