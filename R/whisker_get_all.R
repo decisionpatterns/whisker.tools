@@ -45,5 +45,4 @@ whisker_get_all <- function(template, ...) {
 
   return(li)
 
-  tryCatch
 }

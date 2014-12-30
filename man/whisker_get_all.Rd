@@ -11,10 +11,11 @@ whisker_get_all(template, ...)
 
 \item{...}{additional arguments passed to \code{\link[base]{get}}
 
-\code{whisker_get_all} searches the call sd}
+\code{whisker_get_all} searches the call stack to find the variables in a
+whisker template.}
 }
 \value{
-list containing the names and values from the
+list containing the names and values from the template.
 }
 \description{
 Introspect template and get values from their first appearance on the call
