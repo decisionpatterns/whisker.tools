@@ -17,7 +17,7 @@ whisker.render.dir <- function( path, out=".", data=parent.frame(), ... ) {
   
   # PATH:
   if( ! utils::file_test( "-d", path ) )
-    stop( paste0( "'", path, "' directory does not exist.") )
+    stop( paste0( "'", path, "' path does not exist.") )
   
   # OUT:
   if( utils::file_test( "-f", out ) )
@@ -29,10 +29,11 @@ whisker.render.dir <- function( path, out=".", data=parent.frame(), ... ) {
   # PROCESS TEMPLATES
   files <- dir( path, full.names = FALSE, recursive = TRUE  )
   
-  for ( f in files ) { 
-    tmpl <- readLines( file.path( path, f) , ...)
+  for ( file in files ) { 
+    tmpl <- readLines( file.path( path, file) , ...)
     txt <- whisker::whisker.render( tmpl, data )    
-    writeLines( txt, file.path( out, f ) )
+    outpath <- dirname( file.path( out, file ) )
+    writeLines( txt, file.path( out, file ) )
   }
     
 }

@@ -11,7 +11,8 @@
 #' whisker template.
 #'
 #' @return
-#'   list containing the names and values from the template.
+#'   list containing the names and values from the template. If a value is not 
+#'   found, \code{NA} is returned.
 #'
 #' @seealso
 #'   \code{\link[base]{get}} \cr
@@ -21,7 +22,7 @@
 #'
 #'   a=1; z=26
 #'
-#'   tmpl = "A is rank {{a}}; z is rank {{z}}"
+#'   tmpl = "A is rank {{a}}; z is rank {{z}}; {{w}}"
 #'   whisker_get_all( tmpl )
 #'
 #'   # In function:
@@ -39,7 +40,10 @@ whisker_get_all <- function(template, ...) {
   for( nm in nms ) {
     li[[nm]] <- tryCatch( 
         get(nm, ..., inherits = TRUE )
-      , error = function(...) warning( "whisker_get_all - ", nm, " not found", immediate. = TRUE, call. = FALSE )
+      , error = function(...) { 
+          warning( "whisker_get_all - ", nm, " not found", immediate. = TRUE, call. = FALSE )
+          return(NA)
+        }  
     )
   }
 

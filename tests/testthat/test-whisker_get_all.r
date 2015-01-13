@@ -53,7 +53,11 @@ tmpl <- "A is {{a}}; z is {{z}}"
   source( "source-me.r", local = TRUE  )
   expect_equal( x$a, "passed" )
   expect_equal( x$z, 26 )
-  
+
+
+# MISSING VALUES
+  expect_warning( x <- whisker_get_all("{{foo}}") )
+  expect_true( is.na( x$foo ) )
 
 
 # Clean-up 
@@ -61,3 +65,7 @@ tmpl <- "A is {{a}}; z is {{z}}"
   detach( NEWERENV )
   if( exists('x') ) rm(x)
   if( exists('f2') ) rm(f2)
+
+
+
+      

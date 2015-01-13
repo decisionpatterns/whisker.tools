@@ -15,7 +15,8 @@ whisker_get_all(template, ...)
 whisker template.}
 }
 \value{
-list containing the names and values from the template.
+list containing the names and values from the template. If a value is not
+  found, \code{NA} is returned.
 }
 \description{
 Introspect template and get values from their first appearance on the call
@@ -24,7 +25,7 @@ stack.
 \examples{
 a=1; z=26
 
-  tmpl = "A is rank {{a}}; z is rank {{z}}"
+  tmpl = "A is rank {{a}}; z is rank {{z}}; {{w}}"
   whisker_get_all( tmpl )
 
   # In function:
