@@ -1,0 +1,15 @@
+Package: whisker.tools
+Title: Extensions to the whisker library
+Version: 0.6
+Date: 2015-01-13
+Authors@R: "Christopher Brown <Christopher.Brown@decisionpatterns.com> [aut,
+    cre]"
+Description: Functions and methods that enhance the whisker library
+Imports:
+    whisker,
+    stringr, 
+    utils
+License: GPL-2
+LazyData: true
+Suggests:
+    testthat
