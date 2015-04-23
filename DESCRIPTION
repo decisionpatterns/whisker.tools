@@ -1,13 +1,13 @@
 Package: whisker.tools
 Title: Extensions to the whisker library
-Version: 0.6
-Date: 2015-01-13
+Version: 0.7.0
+Date: 2015-04-23
 Authors@R: "Christopher Brown <Christopher.Brown@decisionpatterns.com> [aut,
     cre]"
 Description: Functions and methods that enhance the whisker library
 Imports:
     whisker,
-    stringr, 
+    stringi, 
     utils
 License: GPL-2
 LazyData: true

@@ -13,7 +13,7 @@
 #'
 #'  @seealso 
 #'    \code{\link[whisker]{whisker.render}}
-#'    \code{\link[stringr]{str_extract_all}} on which this function relies  
+#'    \code{\link[stringi]{stri_extract_all_regex}} on which this function relies  
 #'    
 #'  @examples
 #'    template <- "Dear {{name}}, I have not loved you since {{date}}"
@@ -22,14 +22,13 @@
 #'    
 #'   
 #' @export   
-#' @import stringr
+#' @import stringi
 
 whisker_names <- function(template) {
   
   variables <- 
-    stringr::str_extract_all( template, pattern=perl( '{{(.+?)}}' ) )
-  
-  variables <- lapply( variables, str_replace_all, pattern=perl( '[{}]'), replacement='')
+    # stringr::str_extract_all( template, pattern=regex( '{{(.+?)}}' ) )
+    stringi::stri_match_all_regex( template, pattern='\\{\\{(.+?)\\}\\}' )[[1]][,2]
   
   unlist(variables)
 }
