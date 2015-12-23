@@ -1,12 +1,11 @@
 library(testthat)
+library(env.tools)
 
 context( "whisker_get_all" )
 
 tmpl <- "A is {{a}}; z is {{z}}"
 
-  NEWENV <- new.env() 
-  NEWENV$a <- 1
-  NEWENV$z <- 26
+  NEWENV <- env( a=1, z=26 )
   attach( NEWENV )
 
 # BASIC TEST
@@ -22,8 +21,8 @@ tmpl <- "A is {{a}}; z is {{z}}"
 
 # BASIC TESTS
   if( exists('x') ) rm(x)
-  x <- whisker_get_all( tmpl )
-  expect_equivalent( list2env(x), NEWERENV )
+  x <- whisker_get_all(tmpl)
+  expect_equivalent( list2env(x), env( a="passed", z=26 ) )
   
   rm( NEWENV, NEWERENV )  # Still on search path
 

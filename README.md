@@ -2,7 +2,7 @@ whisker.tools
 ===============
 Extensions to the R whisker package
 
-The `whisker.tools` package provides missing functionality to Edwin de Jonge's excellent `whisker library`. Whisker implements the `mustache` specification in R; mustache is a language agnostic, logicless template system. The `whisker` provides all the functionality for injecting variables into templates, but falls short of programmatic needs for working with templates. For example, often it is desirable to know what variables are used in the template. This is where `whisker.tools` steps in.  `whisker.tools` provides a set of common utilities for parsing whisker templates.
+The `whisker.tools` package provides missing functionality to Edwin de Jonge's `whisker library`. Whisker implements the `mustache` specification in R; mustache is a language agnostic, logicless template system. The `whisker` provides all the functionality for injecting variables into templates, but falls short of programmatic needs for working with templates. For example, often it is desirable to know what variables are used in the template. This is where `whisker.tools` steps in.  `whisker.tools` provides a set of common utilities for parsing whisker templates.
 
 
 Mustache syntax
