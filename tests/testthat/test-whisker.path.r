@@ -1,3 +1,3 @@
-#' test-whisker.path
+#' test-whisker_path
 
-context('whisker.path')
+context('whisker_path')

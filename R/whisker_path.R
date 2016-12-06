@@ -1,4 +1,4 @@
-#' render.path
+#' whisker_path
 #' 
 #' Combines \code{\link[base]{file.path}} except arguments are run through 
 #' \code{\link[whisker]{whisker.render}} first,
@@ -8,19 +8,27 @@
 #'        rendering 
 #' @param fsep character; the path separator to use
 #' 
-#' @note
+#' @details
+#'    
+#'   \code{whisker.path} is an alias for \code{whisker_path.}
+#' 
+#' @note 
 #'   Whisker variables cannot contain '.' by specification, therefore the 
 #'   template cannot use names with '.'
-#' 
+#'   
+#' @seealso
+#'   \code{\link[base]{file.path}} \cr
+#'   \code{\link[whisker]{whisker.render}}
+#'   
 #' @examples 
 #'   dir <- "~/tmp"
 #'   file_name <- "myfile"
-#'   whisker.path( "{{dir}}", "{{file_name}}.txt" )
+#'   whisker_path( "{{dir}}", "{{file_name}}.txt" )
 #'   
 #' @export
 #' @import whisker
 
-whisker.path <- function( ..., data=parent.frame(), fsep=.Platform$file.sep ) { 
+whisker_path <- function( ..., data=parent.frame(), fsep=.Platform$file.sep ) { 
 
   template <- Reduce( 
     function(x,y) file.path( x,y, fsep=fsep), list(...) 
@@ -31,3 +39,8 @@ whisker.path <- function( ..., data=parent.frame(), fsep=.Platform$file.sep ) {
   )
   
 }
+
+#' @export whisker.path 
+#' @rdname whisker_path 
+
+whisker.path <- whisker_path 
