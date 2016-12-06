@@ -1,20 +1,20 @@
 Package: whisker.tools
-Title: Extensions to the whisker library
-Version: 0.7.1
-Date: 2015-12-22
+Title: Extensions and Enhancements to the 'whisker' package
+Version: 0.9.0
+Date: 2016-12-05
 Authors@R: c( 
       person( "Christopher", "Brown", role=c("aut","cre"), email = "christopher.brown@decisionpatterns.com" ), 
       person( "Decision Patterns", role="cph" )
     )
-Description: Functions and methods that enhance the whisker library
-Depends: 
-    whisker
+Description: Extensions and Enhancements to the 'whisker' package including 
+    template name extracting, template checking, file path templates, etc.
+Depends:
+    whisker (>= 0.3.2)
 Imports:
-    stringi, 
+    stringi (>= 1.1.2),
     utils
 Suggests:
-    env.tools
+    testthat
 License: GPL-2 | file LICENSE
 LazyData: true
-Suggests:
-    testthat
+RoxygenNote: 5.0.1

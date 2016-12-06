@@ -7,8 +7,20 @@
 whisker_render(template, data = parent.frame(), partials = list(),
   debug = FALSE)
 }
+\arguments{
+\item{template}{character with template text}
+
+\item{data}{named list or environment with variables that will be used during rendering}
+
+\item{partials}{named list with partial templates, will be used during template construction}
+
+\item{debug}{Used for debugging purposes, likely to disappear}
+}
 \description{
 An alias for whisker.render
+}
+\author{
+Edwin de Jonge, \url{https://github.com/edwindj/whisker}
 }
 \seealso{
 \code{\link[whisker]{whisker.render}}

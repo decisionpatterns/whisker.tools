@@ -2,7 +2,7 @@ library(testthat)
 library(env.tools)
 
 context( "whisker_get_all" )
-
+test_that( "whisker_get_all", { 
 tmpl <- "A is {{a}}; z is {{z}}"
 
   NEWENV <- env( a=1, z=26 )
@@ -65,6 +65,7 @@ tmpl <- "A is {{a}}; z is {{z}}"
   if( exists('x') ) rm(x)
   if( exists('f2') ) rm(f2)
 
+  })
 
 
       

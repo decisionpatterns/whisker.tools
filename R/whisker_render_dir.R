@@ -10,7 +10,7 @@
 #' @import utils
 #' @export   
 
-whisker.render.dir <- function( path, out=".", data=parent.frame(), ... ) { 
+whisker_render_dir <- function( path, out=".", data=parent.frame(), ... ) { 
   
   path <- normalizePath(path)
   out  <- normalizePath(out) 
@@ -31,7 +31,7 @@ whisker.render.dir <- function( path, out=".", data=parent.frame(), ... ) {
   
   for ( file in files ) { 
     tmpl <- readLines( file.path( path, file) , ...)
-    txt <- whisker::whisker.render( tmpl, data )    
+    txt <- whisker_render( tmpl, data )    
     outpath <- dirname( file.path( out, file ) )
     writeLines( txt, file.path( out, file ) )
   }

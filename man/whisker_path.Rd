@@ -19,7 +19,7 @@ rendering}
 }
 \description{
 Combines \code{\link[base]{file.path}} except arguments are run through 
-\code{\link[whisker]{whisker.render}} first,
+\code{\link{whisker_render}} first,
 }
 \details{
 \code{whisker.path} is an alias for \code{whisker_path.}
@@ -36,6 +36,6 @@ Whisker variables cannot contain '.' by specification, therefore the
 }
 \seealso{
 \code{\link[base]{file.path}} \cr
-  \code{\link[whisker]{whisker.render}}
+  \code{\link{whisker_render}}
 }
 

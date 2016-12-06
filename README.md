@@ -11,13 +11,16 @@ Important Functions
 - `whisker_names` : Extract varaibles names from a whisker template, like `ls` or names applied to a template.
 - `whisker_get_all` : Find all of a templates names on the call stack, like `get`.
 - `whisker_mapply` : repeatedly render a template over multiple arguments
-- `whisker_path` : Treat arguments to `file.path` as if they were a
+- `whisker_path` : Render arguments to `file.path` using `whisker_render`
+- `whisker_check` : check to see that all variables are present 
+
 
 Mustache syntax
 ---------------
 
 The syntax of Mustache templates is described [here](http://mustache.github.com/mustache.5.html). 
 How the mustache template are used with whisker can be found in the whisker documentation, and below.
+
 
 Mustache specification
 ----------------------
@@ -29,15 +32,12 @@ Installation
 
 The latest whisker.tools version is not yet available on CRAN, but can be installed from github:
 
+
 ```r
 library(devtools)
 
 # dev_mode()
-install_github("whisker", "edwindj")
+install_github("decisionpatterns/whisker.tools")
 ```
 
-Usage
------
-
-- tk
 

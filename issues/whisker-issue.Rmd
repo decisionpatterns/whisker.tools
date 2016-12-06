@@ -1,0 +1,80 @@
+---
+title: 'Whisker: Sections with Non-Empty Lists'
+author: "Christopher Brown"
+date: "March 31, 2016"
+output: html_document
+---
+
+While *whisker* supports sections, it  does not appear to support sections with non-empty lists as described in <https://mustache.github.io/mustache.5.html>:
+
+Template:
+
+    {{#repo}}
+      <b>{{name}}</b>
+    {{/repo}}
+    
+Hash:
+
+    {
+      "repo": [
+        { "name": "resque" },
+        { "name": "hub" },
+        { "name": "rip" }
+      ]
+    }
+    
+Output:
+
+    <b>resque</b>
+    <b>hub</b>
+    <b>rip</b>
+
+
+## Using JSON
+
+This closely follows the mustache documentation by using`jsonlite` to convert the hash to an R object. The R object is a list with a data frame of 3 rows.
+
+```{r}
+library(jsonlite)
+library(whisker)
+
+tmpl <- 
+  "{{#repo}}
+  <b>{{name}}</b>
+  {{/name}}"
+
+hash <- 
+  '{
+    "repo": [
+      { "name": "resque" },
+      { "name": "hub" },
+      { "name": "rip" }
+    ]
+  }'
+
+data <- fromJSON(hash)  # list of data.frame not list of list
+
+
+whisker_render(tmpl,data)   
+```
+
+This does not conform to the specification is not correct as in collapses the `name` column rather than returning three results. According to the specification, I would expect this result:
+
+```{r}
+c("<b>resque</b>","<b>hub</b>","<b>rip</b>")
+```
+
+
+## Using list-of-lists 
+
+Using a list of lists does not work either:
+
+```{r}
+data <- list( repo = list( name="resque", name="hub", name="rip") )
+whisker_render(tmpl,data) 
+# [1] "<b>resque</b>"
+
+```
+
+
+

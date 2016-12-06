@@ -1,13 +1,14 @@
 library(testthat)
 
-context( 'whisker.render.dir' )
+context( 'whisker_render_dir' )
 
+test_that( "whisker_render_dir", { 
 path <- # if ( interactive() ) "tests/testthat/templates/" else 
   "templates"
 out  <- tempdir() 
 data <- list( foo = 'me', bar = 'you' )
 
-whisker.render.dir( path=path, out=out, data=data  )
+whisker_render_dir( path=path, out=out, data=data  )
   
 # RENDERED TEMPLATES EXIST
   files <- dir( out, recursive = TRUE )
@@ -28,3 +29,4 @@ whisker.render.dir( path=path, out=out, data=data  )
 
 # CLEANUP 
   unlink(out)
+})

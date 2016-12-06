@@ -34,9 +34,7 @@ whisker_path <- function( ..., data=parent.frame(), fsep=.Platform$file.sep ) {
     function(x,y) file.path( x,y, fsep=fsep), list(...) 
   )
   
-  return( 
-    whisker::whisker_render( template, data=data )
-  )
+  return( whisker_render( template, data=data ) )
   
 }
 
