@@ -8,8 +8,8 @@
 #' @param partials See \code{\link[whisker]{whisker.render}}
 #' @param ... named list of object that get substituted 
 #' 
-#' \code{whisker_mapply} supports a mapply type interface over \code{whisker.render}
-#' that allows for vector of template renderings. 
+#' \code{whisker_mapply} supports a mapply type interface over 
+#' \code{whisker_render} that allows for vector of template renderings. 
 #' 
 #' The advantage of this approach are several-fold:  
 #' - more reusablity of the template
@@ -22,7 +22,7 @@
 #'   character vector of rendered templates
 #'   
 #' @seealso 
-#'   \code{\link{whisker.render}}
+#'   \code{\link{whisker_render}}
 #'      
 #' @examples   
 #'   template <- 'type {{type}}: {{uppercase}},{{lowercase}}'
@@ -47,7 +47,7 @@ whisker_mapply <- function( template, data = parent.frame(), partials = list(), 
   ret <- character()
   for( row in 1:nrow(dots) ) {
     newdata <- c( as.list( dots[row, , drop=FALSE] ), data  )
-    ret[[ length(ret)+1 ]] <- whisker.render( template=template, data=newdata, partials=partials ) 
+    ret[[ length(ret)+1 ]] <- whisker_render( template=template, data=newdata, partials=partials ) 
   }  
   
   return(ret)

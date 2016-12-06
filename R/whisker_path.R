@@ -1,7 +1,7 @@
 #' whisker_path
 #' 
 #' Combines \code{\link[base]{file.path}} except arguments are run through 
-#' \code{\link[whisker]{whisker.render}} first,
+#' \code{\link{whisker_render}} first,
 #' 
 #' @param ... character; defining a path
 #' @param data named list or environment with variables that will be used during
@@ -18,7 +18,7 @@
 #'   
 #' @seealso
 #'   \code{\link[base]{file.path}} \cr
-#'   \code{\link[whisker]{whisker.render}}
+#'   \code{\link{whisker_render}}
 #'   
 #' @examples 
 #'   dir <- "~/tmp"
@@ -35,7 +35,7 @@ whisker_path <- function( ..., data=parent.frame(), fsep=.Platform$file.sep ) {
   )
   
   return( 
-    whisker::whisker.render( template, data=data )
+    whisker::whisker_render( template, data=data )
   )
   
 }
