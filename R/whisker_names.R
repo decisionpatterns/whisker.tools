@@ -22,8 +22,8 @@
 #'   template <- "Dear {{name}}, I have not loved you since {{date}}"
 #'
 #'   whisker_names(template)
-#'
-#'
+#'   whisker_vars(template)   # same
+#'   
 #' @export
 #' @import stringi
 
@@ -35,3 +35,9 @@ whisker_names <- function(template) {
 
   unlist(variables)
 }
+
+
+#' @rdname whisker_names 
+#' @export
+
+whisker_vars <- whisker_names

@@ -1,6 +1,6 @@
 #' whisker_path
 #' 
-#' Combines \code{\link[base]{file.path}} except arguments are run through 
+#' Combines [base::file.path()] and except arguments are run through 
 #' \code{\link{whisker_render}} first,
 #' 
 #' @param ... character; defining a path
@@ -17,8 +17,8 @@
 #'   template cannot use names with '.'
 #'   
 #' @seealso
-#'   \code{\link[base]{file.path}} \cr
-#'   \code{\link{whisker_render}}
+#'   [base::file.path()] \cr
+#'   [base::whisker_render()]
 #'   
 #' @examples 
 #'   dir <- "~/tmp"
