@@ -3,7 +3,6 @@
 \docType{package}
 \name{whisker.tools}
 \alias{whisker.tools}
-\alias{whisker.tools-package}
 \title{whisker.tools}
 \description{
 Methods that extend the whisker package
@@ -11,4 +10,3 @@ Methods that extend the whisker package
 \references{
 \url{http://cran.r-project.org/web/packages/whisker/index.html}
 }
-

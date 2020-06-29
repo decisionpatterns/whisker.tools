@@ -9,22 +9,24 @@ whisker_mapply(template, data = parent.frame(), partials = list(), ...)
 \arguments{
 \item{template}{character}
 
-\item{data}{named list or environment with variables that will be used 
+\item{data}{named list or environment with variables that will be used
 during rendering but do not change in each}
 
 \item{partials}{See \code{\link[whisker]{whisker.render}}}
 
-\item{...}{named list of object that get substituted 
+\item{...}{named list of object that get substituted
 
-\code{whisker_mapply} supports a mapply type interface over 
-\code{whisker_render} that allows for vector of template renderings. 
+\code{whisker_mapply} supports a mapply type interface over
+\code{whisker_render} that allows for vector of template renderings.
 
-The advantage of this approach are several-fold:  
-- more reusablity of the template
-- cleaner syntax
-- no need to be changing out data
-- less looping 
-- template rendered as a vector}
+The advantage of this approach are several-fold:
+\itemize{
+\item more reusablity of the template
+\item cleaner syntax
+\item no need to be changing out data
+\item less looping
+\item template rendered as a vector
+}}
 }
 \value{
 character vector of rendered templates
@@ -50,4 +52,3 @@ Have a mixture of changing and unchanging template elements.
 \seealso{
 \code{\link{whisker_render}}
 }
-

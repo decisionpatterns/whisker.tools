@@ -29,4 +29,3 @@ Check a template for all variables
 \seealso{
 \code{\link{whisker_names}} \cr
 }
-

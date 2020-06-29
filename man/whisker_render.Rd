@@ -4,8 +4,13 @@
 \alias{whisker_render}
 \title{whisker_render}
 \usage{
-whisker_render(template, data = parent.frame(), partials = list(),
-  debug = FALSE)
+whisker_render(
+  template,
+  data = parent.frame(),
+  partials = list(),
+  debug = FALSE,
+  strict = TRUE
+)
 }
 \arguments{
 \item{template}{character with template text}
@@ -19,10 +24,9 @@ whisker_render(template, data = parent.frame(), partials = list(),
 \description{
 An alias for whisker.render
 }
-\author{
-Edwin de Jonge, \url{https://github.com/edwindj/whisker}
-}
 \seealso{
 \code{\link[whisker]{whisker.render}}
 }
-
+\author{
+Edwin de Jonge, \url{https://github.com/edwindj/whisker}
+}

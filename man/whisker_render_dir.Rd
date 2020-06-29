@@ -9,10 +9,10 @@ whisker_render_dir(path, out = ".", data = parent.frame(), ...)
 \arguments{
 \item{path}{character; path to single directory containing templates}
 
-\item{out}{character; path to single directory where rendered files are 
+\item{out}{character; path to single directory where rendered files are
 written.}
 
-\item{data}{named list or environment with variables that will be used 
+\item{data}{named list or environment with variables that will be used
 during rendering}
 
 \item{...}{additional arguments}
@@ -20,4 +20,3 @@ during rendering}
 \description{
 Render all the templates in a directory
 }
-

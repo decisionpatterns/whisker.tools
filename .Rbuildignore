@@ -3,3 +3,4 @@
 ^\.Rproj\.user$
 revdep
 issues
+^whisker\.tools\.Rproj$

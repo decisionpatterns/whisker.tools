@@ -2,9 +2,12 @@
 % Please edit documentation in R/whisker_names.R
 \name{whisker_names}
 \alias{whisker_names}
+\alias{whisker_vars}
 \title{whisker_names}
 \usage{
 whisker_names(template)
+
+whisker_vars(template)
 }
 \arguments{
 \item{template}{character of template text
@@ -31,6 +34,5 @@ See for example, \url{http://stackoverflow.com/a/16596015/1504321}
 }
 \seealso{
 \code{\link{whisker_render}} \cr
-  \code{\link[stringi]{stri_extract_all_regex}} on which this function relies
+\code{\link[stringi]{stri_extract_all_regex}} on which this function relies
 }
-

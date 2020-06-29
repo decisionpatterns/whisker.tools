@@ -15,8 +15,8 @@ whisker_get_all(template, ...)
 whisker template.}
 }
 \value{
-list containing the names and values from the template. If a value is not 
-  found, \code{NA} is returned.
+list containing the names and values from the template. If a value is not
+found, \code{NA} is returned.
 }
 \description{
 Introspect template and get values from their first appearance on the call
@@ -36,6 +36,5 @@ stack.
 }
 \seealso{
 \code{\link[base]{get}} \cr
-  \code{\link{whisker_names}} \cr
+\code{\link{whisker_names}} \cr
 }
-
